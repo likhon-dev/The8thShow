@@ -28,26 +28,28 @@
     }
 
     h1 {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 2rem;
+      opacity: 0.8;
     }
 
     #player-container {
       width: 90%;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
     }
 
-    .video-js {
-      border-radius: 12px;
+   .video-js {
+      border-radius: 16px;
     }
 
     footer {
@@ -76,7 +78,7 @@
       preload="auto"
       width="100%"
       height="auto"
-      poster="https://via.placeholder.com/800x450?text=The+8th+Show+Player"
+      poster="https://via.placeholder.com/900x506?text=The+8th+Show+Player"
       data-setup='{}'>
       <source src="https://likhon-dev.github.io/The8thShow/x.m3u8" type="application/x-mpegURL" />
       Your browser does not support HLS playback.
@@ -84,7 +86,7 @@
   </div>
 
   <footer>
-    <p>© 2025 <a href="https://github.com/likhon-dev" target="_blank">Likhon Sheikh</a>. All rights reserved.</p>
+    <p> 2025 <a href="https://github.com/likhon-dev" target="_blank">Likhon Sheikh</a>. All rights reserved.</p>
   </footer>
 
   <!-- Video.js and HLS Plugin -->
@@ -97,6 +99,12 @@
       controls: true,
       responsive: true,
       fluid: true,
+      playbackRates: [0.5, 1, 1.5, 2],
+      controlBar: {
+        volumePanel: {
+          inline: false
+        }
+      }
     });
 
     // Optional: Log player events (for debugging or analytics)
