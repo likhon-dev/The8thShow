@@ -3,28 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A modern HLS player for GitHub Pages to play .m3u8 files seamlessly.">
-  <meta name="keywords" content="HLS, m3u8 player, GitHub Pages, Video.js, modern video player">
+  <meta name="description" content="Stream The 8th Show with a fast, modern, and responsive HLS player.">
+  <meta name="keywords" content="The 8th Show, HLS Player, Video Streaming, Modern Design">
   <meta name="author" content="Likhon Sheikh">
-  <title>Modern HLS Player</title>
+  <title>The 8th Show | Modern HLS Player</title>
+  <!-- Video.js CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.4.0/video-js.min.css">
+  <!-- Modern Normalize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
+  <!-- Custom Styles -->
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #1a73e8, #673ab7);
-      color: #ffffff;
+      font-family: 'Inter', sans-serif;
       margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       text-align: center;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
     }
 
@@ -37,17 +41,33 @@
       width: 90%;
       max-width: 800px;
       margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
 
     .video-js {
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #1db954;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Modern HLS Player</h1>
-  <p>Play your <code>.m3u8</code> files directly from GitHub Pages with ease.</p>
+  <h1>The 8th Show</h1>
+  <p>Experience seamless streaming with our modern HLS player. Watch now!</p>
   <div id="player-container">
     <video
       id="hls-player"
@@ -56,17 +76,18 @@
       preload="auto"
       width="100%"
       height="auto"
-      poster="https://via.placeholder.com/800x450?text=HLS+Player"
+      poster="https://via.placeholder.com/800x450?text=The+8th+Show+Player"
       data-setup='{}'>
-      <source src="./x.m3u8" type="application/x-mpegURL" />
+      <source src="https://likhon-dev.github.io/The8thShow/x.m3u8" type="application/x-mpegURL" />
       Your browser does not support HLS playback.
     </video>
   </div>
 
   <footer>
-    <p>© 2025 <a href="https://github.com/sh33ikh" target="_blank" style="color: #ffffff; text-decoration: underline;">Likhon Sheikh</a>. All rights reserved.</p>
+    <p>© 2025 <a href="https://github.com/likhon-dev" target="_blank">Likhon Sheikh</a>. All rights reserved.</p>
   </footer>
 
+  <!-- Video.js and HLS Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/8.4.0/video.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls@5.15.0/dist/videojs-contrib-hls.min.js"></script>
   <script>
@@ -78,13 +99,13 @@
       fluid: true,
     });
 
-    // Optional: Log player events (for debugging)
+    // Optional: Log player events (for debugging or analytics)
     player.on('play', function() {
-      console.log('Video is playing...');
+      console.log('Playback started');
     });
 
     player.on('error', function(error) {
-      console.error('Error:', error);
+      console.error('Playback error:', error);
     });
   </script>
 </body>
